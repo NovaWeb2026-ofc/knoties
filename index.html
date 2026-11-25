@@ -1,0 +1,1952 @@
+<!DOCTYPE html>
+<html lang="pt-MZ" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>THE KNOTIES | Tied by Culture. Defined by Style</title>
+  <meta name="description" content="Descubra a experiência THE KNOTIES. Tranças profissionais, estilos exclusivos e um serviço móvel de beleza que vai até si, em Maputo.">
+  
+  <!-- Open Graph Metadata -->
+  <meta property="og:title" content="THE KNOTIES | Tied by Culture. Defined by Style">
+  <meta property="og:description" content="TIED BY CULTURE. DEFINED BY STYLE. Serviço móvel exclusivo de tranças profissionais em Maputo, Moçambique.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_MZ">
+
+  <!-- Google Fonts: Cormorant Garamond & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Custom Design System & Editorial Styles -->
+  <style>
+    :root {
+      --color-bg-primary: #050505;
+      --color-bg-elevated: #0c0c0d;
+      --color-bg-card: #101012;
+      --color-accent-orange: #F07819;
+      --color-accent-orange-hover: #d8650c;
+      --color-accent-peach: #F8C99B;
+      --color-accent-navy: #092C68;
+      --color-text-primary: #F5F3F0;
+      --color-text-muted: #A39E98;
+      --color-border-subtle: rgba(248, 201, 155, 0.14);
+      --color-border-strong: rgba(240, 120, 25, 0.45);
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      background-color: var(--color-bg-primary);
+      color: var(--color-text-primary);
+      font-family: var(--font-sans);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    h1, h2, h3, h4, .font-editorial {
+      font-family: var(--font-serif);
+    }
+
+    /* Official Brand Logo Blending on #050505 */
+    .brand-logo-img {
+      mix-blend-mode: lighten;
+      object-fit: contain;
+      display: block;
+    }
+
+    /* Navigation Glass Transition */
+    .navbar-initial {
+      background: linear-gradient(180deg, rgba(5, 5, 5, 0.85) 0%, rgba(5, 5, 5, 0) 100%);
+      border-bottom: 1px solid transparent;
+    }
+
+    .navbar-scrolled {
+      background: rgba(5, 5, 5, 0.92);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--color-border-subtle);
+    }
+
+    /* Editorial Buttons */
+    .btn-primary {
+      background-color: var(--color-accent-orange);
+      color: #050505;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+      border: 1px solid var(--color-accent-orange);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--color-accent-peach);
+      border-color: var(--color-accent-peach);
+      color: #050505;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px -8px rgba(240, 120, 25, 0.45);
+    }
+
+    .btn-secondary {
+      background-color: transparent;
+      color: var(--color-accent-peach);
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border: 1px solid rgba(248, 201, 155, 0.4);
+      transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--color-accent-orange);
+      background-color: rgba(240, 120, 25, 0.12);
+      color: #ffffff;
+      transform: translateY(-2px);
+    }
+
+    /* Editorial Image Frame & Hover Zoom */
+    .editorial-frame {
+      position: relative;
+      overflow: hidden;
+      background-color: var(--color-bg-card);
+    }
+
+    .editorial-frame img {
+      transition: transform 0.85s cubic-bezier(0.22, 1, 0.36, 1), filter 0.6s ease;
+    }
+
+    .editorial-frame:hover img {
+      transform: scale(1.045);
+    }
+
+    /* Subtle Navy Blue Brand Accent Glow */
+    .navy-ambient-accent {
+      background: radial-gradient(circle at center, rgba(9, 44, 104, 0.32) 0%, rgba(5, 5, 5, 0) 70%);
+    }
+
+    /* Form Controls */
+    .form-input {
+      background-color: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(248, 201, 155, 0.22);
+      color: var(--color-text-primary);
+      transition: border-color 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .form-input::placeholder {
+      color: rgba(163, 158, 152, 0.55);
+    }
+
+    .form-input:focus {
+      outline: none;
+      border-color: var(--color-accent-orange);
+      background-color: rgba(240, 120, 25, 0.04);
+      box-shadow: 0 0 0 3px rgba(240, 120, 25, 0.15);
+    }
+
+    .form-input.input-error {
+      border-color: #ef4444;
+      background-color: rgba(239, 68, 68, 0.05);
+    }
+
+    select.form-input option {
+      background-color: #0c0c0d;
+      color: #F5F3F0;
+    }
+
+    /* Date & Time Picker Icon Color Fix for Dark Mode */
+    input[type="date"]::-webkit-calendar-picker-indicator,
+    input[type="time"]::-webkit-calendar-picker-indicator {
+      filter: invert(0.85) sepia(0.3) saturate(2) hue-rotate(340deg);
+      cursor: pointer;
+    }
+
+    /* Scroll Reveal Animations */
+    .reveal-item {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .reveal-item.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Hero Entrance */
+    @keyframes heroFadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(26px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .hero-animate-1 { animation: heroFadeUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.1s forwards; opacity: 0; }
+    .hero-animate-2 { animation: heroFadeUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.28s forwards; opacity: 0; }
+    .hero-animate-3 { animation: heroFadeUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.45s forwards; opacity: 0; }
+    .hero-animate-4 { animation: heroFadeUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.62s forwards; opacity: 0; }
+
+    /* Mobile Drawer Transition */
+    .mobile-drawer {
+      transform: translateX(100%);
+      transition: transform 0.42s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .mobile-drawer.open {
+      transform: translateX(0);
+    }
+
+    /* Lightbox Transition */
+    .lightbox-backdrop {
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .lightbox-backdrop.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    /* Respect Reduced Motion */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+      .reveal-item {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
+</head>
+<body class="selection:bg-[#F07819] selection:text-[#050505]">
+
+  <!-- =====================================================================
+       SECTION 01 — NAVIGATION
+       ===================================================================== -->
+  <header id="navbar" class="fixed top-0 left-0 right-0 z-50 navbar-initial transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
+      <div class="flex items-center justify-between h-20 sm:h-24">
+        
+        <!-- Official Brand Logo -->
+        <a href="#inicio" class="flex items-center focus:outline-none group" aria-label="THE KNOTIES — Início">
+          <img 
+            src="1000322495.jpg" 
+            alt="THE KNOTIES — Tied by Culture. Defined by Style." 
+            class="brand-logo-img h-14 sm:h-16 md:h-[72px] w-auto transition-transform duration-300 group-hover:scale-[1.02]"
+            onerror="this.style.display='none'; document.getElementById('nav-logo-fallback').classList.remove('hidden');"
+          >
+          <!-- Compact Fallback Only If Image Asset Cannot Load -->
+          <div id="nav-logo-fallback" class="hidden flex flex-col">
+            <span class="font-editorial text-2xl font-bold tracking-wider text-[#F8C99B]">THE KNOTIES</span>
+            <span class="text-[9px] tracking-[0.22em] text-[#F07819] uppercase">Tied by Culture. Defined by Style.</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden lg:flex items-center space-x-8 xl:space-x-10" aria-label="Navegação Principal">
+          <a href="#inicio" class="text-xs xl:text-sm font-medium tracking-[0.14em] uppercase text-[#F5F3F0] hover:text-[#F07819] transition-colors">Início</a>
+          <a href="#sobre" class="text-xs xl:text-sm font-medium tracking-[0.14em] uppercase text-[#F5F3F0] hover:text-[#F07819] transition-colors">Sobre Nós</a>
+          <a href="#servicos" class="text-xs xl:text-sm font-medium tracking-[0.14em] uppercase text-[#F5F3F0] hover:text-[#F07819] transition-colors">Serviços</a>
+          <a href="#galeria" class="text-xs xl:text-sm font-medium tracking-[0.14em] uppercase text-[#F5F3F0] hover:text-[#F07819] transition-colors">Galeria</a>
+          <a href="#contactos" class="text-xs xl:text-sm font-medium tracking-[0.14em] uppercase text-[#F5F3F0] hover:text-[#F07819] transition-colors">Contactos</a>
+        </nav>
+
+        <!-- Desktop CTA & Mobile Hamburger -->
+        <div class="flex items-center gap-3 sm:gap-4">
+          <a href="#reservar" class="hidden sm:inline-flex items-center justify-center px-5 py-2.5 text-xs rounded-sm btn-primary">
+            Reservar Agora
+          </a>
+
+          <!-- Mobile Menu Toggle -->
+          <button 
+            id="mobile-menu-btn" 
+            type="button" 
+            class="lg:hidden inline-flex items-center justify-center p-2.5 rounded-sm text-[#F8C99B] hover:text-[#F07819] border border-[#F8C99B]/20 focus:outline-none"
+            aria-controls="mobile-drawer"
+            aria-expanded="false"
+            aria-label="Abrir menu de navegação"
+          >
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 12h16M4 17h16"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Slide-Over Drawer -->
+    <div id="mobile-drawer-overlay" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-40 hidden lg:hidden" aria-hidden="true"></div>
+    <aside id="mobile-drawer" class="mobile-drawer fixed top-0 right-0 bottom-0 w-full max-w-xs bg-[#050505] border-l border-[#F8C99B]/15 z-50 flex flex-col justify-between p-6 lg:hidden" aria-label="Menu Mobile">
+      <div>
+        <div class="flex items-center justify-between pb-6 border-b border-[#F8C99B]/15">
+          <img src="1000322495.jpg" alt="THE KNOTIES" class="brand-logo-img h-14 w-auto" onerror="this.style.display='none'">
+          <button id="mobile-menu-close" type="button" class="p-2 text-[#F8C99B] hover:text-[#F07819]" aria-label="Fechar menu">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+            </svg>
+          </button>
+        </div>
+
+        <nav class="mt-8 flex flex-col space-y-5">
+          <a href="#inicio" class="mobile-nav-link font-editorial text-2xl text-[#F5F3F0] hover:text-[#F07819] transition-colors">Início</a>
+          <a href="#sobre" class="mobile-nav-link font-editorial text-2xl text-[#F5F3F0] hover:text-[#F07819] transition-colors">Sobre Nós</a>
+          <a href="#servicos" class="mobile-nav-link font-editorial text-2xl text-[#F5F3F0] hover:text-[#F07819] transition-colors">Serviços</a>
+          <a href="#precos" class="mobile-nav-link font-editorial text-2xl text-[#F5F3F0] hover:text-[#F07819] transition-colors">Tabela de Preços</a>
+          <a href="#galeria" class="mobile-nav-link font-editorial text-2xl text-[#F5F3F0] hover:text-[#F07819] transition-colors">Galeria</a>
+          <a href="#servico-movel" class="mobile-nav-link font-editorial text-2xl text-[#F5F3F0] hover:text-[#F07819] transition-colors">Serviço Móvel</a>
+          <a href="#contactos" class="mobile-nav-link font-editorial text-2xl text-[#F5F3F0] hover:text-[#F07819] transition-colors">Contactos</a>
+        </nav>
+      </div>
+
+      <div class="pt-6 border-t border-[#F8C99B]/15 space-y-4">
+        <a href="#reservar" class="mobile-nav-link block w-full text-center py-3.5 text-xs rounded-sm btn-primary">
+          Reservar Agora
+        </a>
+        <p class="text-[10px] tracking-[0.22em] text-center uppercase text-[#F8C99B]/70">
+          TIED BY CULTURE. DEFINED BY STYLE.
+        </p>
+      </div>
+    </aside>
+  </header>
+
+  <main>
+    <!-- =====================================================================
+         SECTION 02 — HERO SECTION
+         ===================================================================== -->
+    <section id="inicio" class="relative min-h-screen flex items-center pt-24 pb-16 sm:pt-28 sm:pb-24 overflow-hidden">
+      <!-- Background Cinematic Editorial Photography -->
+      <div class="absolute inset-0 z-0">
+        <img 
+          src="1000322649.jpg" 
+          alt="Tranças texturizadas com reflexos quentes em retrato editorial da THE KNOTIES" 
+          class="w-full h-full object-cover object-center scale-105"
+          fetchpriority="high"
+        >
+        <!-- Multi-layered Luxury Dark & Warm Cinematic Overlays -->
+        <div class="absolute inset-0 bg-gradient-to-r from-[#050505] via-[#050505]/85 to-[#050505]/35"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-[#050505]/60"></div>
+        <div class="absolute -bottom-32 -left-32 w-[500px] h-[500px] navy-ambient-accent pointer-events-none"></div>
+      </div>
+
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 w-full">
+        <div class="max-w-3xl">
+          <!-- Official Slogan Eyebrow -->
+          <div class="hero-animate-1 inline-flex items-center gap-3 mb-6">
+            <span class="h-[1px] w-8 sm:w-12 bg-[#F07819]"></span>
+            <span class="text-[11px] sm:text-xs font-medium tracking-[0.26em] uppercase text-[#F07819]">
+              TIED BY CULTURE. DEFINED BY STYLE.
+            </span>
+          </div>
+
+          <!-- Editorial Headline -->
+          <h1 class="hero-animate-2 font-editorial text-5xl sm:text-6xl md:text-7xl lg:text-[5.25rem] font-semibold leading-[1.04] tracking-tight text-[#F8C99B] mb-6">
+            Beleza em cada <span class="italic font-normal text-[#F07819]">trança.</span>
+          </h1>
+
+          <!-- Supporting Copy -->
+          <p class="hero-animate-3 text-base sm:text-lg md:text-xl font-light leading-relaxed text-[#F5F3F0]/90 max-w-xl mb-10">
+            Mais do que tranças, uma expressão de identidade, confiança e elegância. Levamos a experiência <span class="text-[#F8C99B] font-medium">THE KNOTIES</span> até si, em Maputo.
+          </p>
+
+          <!-- Primary & Secondary CTAs -->
+          <div class="hero-animate-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-5">
+            <a href="#reservar" class="inline-flex items-center justify-center px-8 py-4 text-xs sm:text-sm rounded-sm btn-primary">
+              RESERVAR AGORA
+            </a>
+            <a href="#servicos" class="inline-flex items-center justify-center px-8 py-4 text-xs sm:text-sm rounded-sm btn-secondary">
+              EXPLORAR SERVIÇOS
+            </a>
+          </div>
+
+          <!-- Subtle Service Distinction Strip -->
+          <div class="hero-animate-4 mt-14 pt-8 border-t border-[#F8C99B]/15 grid grid-cols-2 sm:grid-cols-3 gap-6 max-w-xl">
+            <div>
+              <p class="text-[10px] tracking-[0.2em] uppercase text-[#F07819] mb-1">Formato Exclusivo</p>
+              <p class="text-xs sm:text-sm text-[#F5F3F0]/85 font-light">Atendimento Móvel ao Domicílio</p>
+            </div>
+            <div>
+              <p class="text-[10px] tracking-[0.2em] uppercase text-[#F07819] mb-1">Localização</p>
+              <p class="text-xs sm:text-sm text-[#F5F3F0]/85 font-light">Maputo, Moçambique</p>
+            </div>
+            <div class="col-span-2 sm:col-span-1">
+              <p class="text-[10px] tracking-[0.2em] uppercase text-[#F07819] mb-1">Assinatura</p>
+              <p class="text-xs sm:text-sm text-[#F5F3F0]/85 font-light">Acabamento Editorial &amp; Precisão</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         SECTION 03 — ABOUT THE BRAND
+         ===================================================================== -->
+    <section id="sobre" class="relative py-24 sm:py-32 bg-[#050505] border-t border-[#F8C99B]/10">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          
+          <!-- Left Editorial Image Composition -->
+          <div class="lg:col-span-5 reveal-item">
+            <div class="relative">
+              <!-- Decorative Navy Blue Offset Frame -->
+              <div class="hidden sm:block absolute -top -left w-full h-full border border-[#092C68] pointer-events-none"></div>
+              <div class="editorial-frame aspect-[4/5] rounded-sm">
+                <img 
+                  src="1000322645.jpg" 
+                  alt="Aline Benilde, proprietária da THE KNOTIES, exibindo tranças com divisões definidas" 
+                  class="w-full h-full object-cover"
+                  loading="lazy"
+                >
+                <div class="absolute inset-0 bg-gradient-to-t from-[#050505]/75 via-transparent to-transparent"></div>
+                <div class="absolute bottom-5 left-5 right-5 flex items-center justify-between border-t border-[#F8C99B]/25 pt-4">
+                  <span class="text-[11px] tracking-[0.2em] uppercase text-[#F8C99B]">Aline Benilde &bull; Proprietária</span>
+                  <span class="text-[11px] tracking-[0.18em] uppercase text-[#F07819]">Maputo</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Narrative & Brand Philosophy -->
+          <div class="lg:col-span-7 reveal-item">
+            <div class="inline-flex items-center gap-3 mb-4">
+              <span class="h-[1px] w-8 bg-[#F07819]"></span>
+              <span class="text-xs font-medium tracking-[0.24em] uppercase text-[#F07819]">Sobre a Marca</span>
+            </div>
+
+            <h2 class="font-editorial text-4xl sm:text-5xl lg:text-6xl font-semibold leading-[1.08] text-[#F8C99B] mb-8">
+              A arte de transformar através das tranças.
+            </h2>
+
+            <div class="space-y-5 text-base sm:text-lg font-light leading-relaxed text-[#F5F3F0]/85">
+              <p>
+                A <strong class="font-medium text-[#F8C99B]">THE KNOTIES</strong>, liderada por <strong class="font-medium text-[#F8C99B]">Aline Benilde</strong>, nasce da celebração da herança africana aliada à sofisticação contemporânea. Entendemos cada penteado não apenas como uma escolha estética, mas como uma afirmação de cultura, personalidade e presença.
+              </p>
+              <p>
+                Operamos exclusivamente como um <span class="text-[#F8C99B]">serviço móvel de tranças profissionais em Maputo</span>, levando o rigor técnico, a criatividade e o cuidado personalizado directamente ao conforto da sua casa ou ao local da sua preferência.
+              </p>
+              <p>
+                Cada sessão é dedicada à precisão das divisões, ao respeito pela saúde do cabelo natural e à criação de um acabamento impecável, pensado ao pormenor para realçar a sua individualidade.
+              </p>
+            </div>
+
+            <!-- Brand Pillars Grid -->
+            <div class="mt-10 pt-10 border-t border-[#F8C99B]/15 grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div class="flex items-start gap-4">
+                <span class="mt-1 w-2 h-2 rotate-45 bg-[#F07819] shrink-0"></span>
+                <div>
+                  <h3 class="font-editorial text-xl font-semibold text-[#F8C99B]">Expressão Individual</h3>
+                  <p class="text-sm text-[#A39E98] mt-1 leading-relaxed">Estilos adaptados aos seus traços, proporções e preferência pessoal.</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-4">
+                <span class="mt-1 w-2 h-2 rotate-45 bg-[#F07819] shrink-0"></span>
+                <div>
+                  <h3 class="font-editorial text-xl font-semibold text-[#F8C99B]">Rigor &amp; Acabamento</h3>
+                  <p class="text-sm text-[#A39E98] mt-1 leading-relaxed">Atenção minuciosa aos detalhes, simetria e leveza em cada trança.</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-4">
+                <span class="mt-1 w-2 h-2 rotate-45 bg-[#F07819] shrink-0"></span>
+                <div>
+                  <h3 class="font-editorial text-xl font-semibold text-[#F8C99B]">Conveniência Total</h3>
+                  <p class="text-sm text-[#A39E98] mt-1 leading-relaxed">Sem deslocações nem esperas em salão a experiência THE KNOTIES vai até si.</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-4">
+                <span class="mt-1 w-2 h-2 rotate-45 bg-[#F07819] shrink-0"></span>
+                <div>
+                  <h3 class="font-editorial text-xl font-semibold text-[#F8C99B]">Orgulho Cultural</h3>
+                  <p class="text-sm text-[#A39E98] mt-1 leading-relaxed">Técnicas inspiradas na tradição africana reinterpretadas com elegância moderna.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         SECTION 04 — SERVICES (EDITORIAL GRID)
+         ===================================================================== -->
+    <section id="servicos" class="relative py-24 sm:py-32 bg-[#080809] border-t border-[#F8C99B]/10">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
+        
+        <!-- Section Header -->
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6 reveal-item">
+          <div class="max-w-2xl">
+            <div class="inline-flex items-center gap-3 mb-4">
+              <span class="h-[1px] w-8 bg-[#F07819]"></span>
+              <span class="text-xs font-medium tracking-[0.24em] uppercase text-[#F07819]">Menu de Estilos</span>
+            </div>
+            <h2 class="font-editorial text-4xl sm:text-5xl lg:text-6xl font-semibold text-[#F8C99B] leading-tight">
+              Serviços de Assinatura
+            </h2>
+          </div>
+          <p class="text-sm sm:text-base text-[#A39E98] max-w-md font-light leading-relaxed">
+            Seleccione o estilo pretendido para iniciar o seu pedido de marcação. Os valores e durações são confirmados de forma personalizada consoante a sua escolha.
+          </p>
+        </div>
+
+        <!-- Asymmetric Editorial Services Layout -->
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-10">
+
+          <!-- Service 01: Two-Strands Twists (Featured Wide Editorial Block) -->
+          <article class="md:col-span-7 bg-[#0c0c0d] border border-[#F8C99B]/15 rounded-sm overflow-hidden flex flex-col justify-between reveal-item group">
+            <div class="editorial-frame aspect-[16/10] w-full">
+              <img 
+                src="1000322646.jpg" 
+                alt="Two-Strands Twists — Tranças com divisões limpas e acabamento leve" 
+                class="w-full h-full object-cover"
+                loading="lazy"
+              >
+              <div class="absolute top-4 left-4 bg-[#050505]/85 backdrop-blur-sm border border-[#F07819]/40 px-3 py-1 text-[10px] tracking-[0.2em] uppercase text-[#F07819]">
+                01 &bull; Assinatura
+              </div>
+            </div>
+            <div class="p-6 sm:p-8 flex-1 flex flex-col justify-between">
+              <div>
+                <h3 class="font-editorial text-3xl sm:text-4xl font-semibold text-[#F8C99B] mb-3">Boho Twists</h3>
+                <p class="text-sm sm:text-base text-[#F5F3F0]/80 font-light leading-relaxed mb-6">
+                  Tranças sem nó na raiz que oferecem máxima leveza, movimento natural e menor tensão no couro cabeludo. Ideais para um visual sofisticado e versátil.
+                </p>
+              </div>
+              <div class="pt-5 border-t border-[#F8C99B]/12 flex flex-wrap items-center justify-between gap-4">
+                <div class="flex items-center gap-6">
+                  <div>
+                    <span class="block text-[10px] uppercase tracking-[0.18em] text-[#A39E98]">Valor (MT)</span>
+                    <span class="text-sm font-medium text-[#F8C99B]">Sob consulta</span>
+                  </div>
+                  <div>
+                    <span class="block text-[10px] uppercase tracking-[0.18em] text-[#A39E98]">Duração Est.</span>
+                    <span class="text-sm font-medium text-[#F5F3F0]/85">A confirmar</span>
+                  </div>
+                </div>
+                <button type="button" data-select-service="Boho Twists" class="px-5 py-2.5 text-xs rounded-sm btn-secondary">
+                  Solicitar Estilo
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Service 02: Box Braids -->
+          <article class="md:col-span-5 bg-[#0c0c0d] border border-[#F8C99B]/15 rounded-sm overflow-hidden flex flex-col justify-between reveal-item group">
+            <div class="editorial-frame aspect-[4/3] md:aspect-[11/10] w-full">
+              <img 
+                src="1000322649.jpg" 
+                alt="Box Braids — Tranças de comprimento médio com movimento natural" 
+                class="w-full h-full object-cover"
+                loading="lazy"
+              >
+              <div class="absolute top-4 left-4 bg-[#050505]/85 backdrop-blur-sm border border-[#F8C99B]/30 px-3 py-1 text-[10px] tracking-[0.2em] uppercase text-[#F8C99B]">
+                02 &bull; Clássico
+              </div>
+            </div>
+            <div class="p-6 sm:p-8 flex-1 flex flex-col justify-between">
+              <div>
+                <h3 class="font-editorial text-3xl font-semibold text-[#F8C99B] mb-3">Box Braids</h3>
+                <p class="text-sm sm:text-base text-[#F5F3F0]/80 font-light leading-relaxed mb-6">
+                  O clássico intemporal com divisões geométricas definidas e estrutura duradoura. Disponível em diferentes espessuras e comprimentos.
+                </p>
+              </div>
+              <div class="pt-5 border-t border-[#F8C99B]/12 flex flex-wrap items-center justify-between gap-4">
+                <div class="flex items-center gap-5">
+                  <div>
+                    <span class="block text-[10px] uppercase tracking-[0.18em] text-[#A39E98]">Valor (MT)</span>
+                    <span class="text-sm font-medium text-[#F8C99B]">Sob consulta</span>
+                  </div>
+                  <div>
+                    <span class="block text-[10px] uppercase tracking-[0.18em] text-[#A39E98]">Duração Est.</span>
+                    <span class="text-sm font-medium text-[#F5F3F0]/85">A confirmar</span>
+                  </div>
+                </div>
+                <button type="button" data-select-service="Box Braids" class="px-5 py-2.5 text-xs rounded-sm btn-secondary">
+                  Solicitar Estilo
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Service 03: Cabelo Natural Volumoso -->
+          <article class="md:col-span-4 bg-[#0c0c0d] border border-[#F8C99B]/15 rounded-sm overflow-hidden flex flex-col justify-between reveal-item group">
+            <div class="editorial-frame aspect-[4/3] w-full">
+              <img 
+                src="1000322648.jpg" 
+                alt="Cabelo Natural Volumoso" 
+                class="w-full h-full object-cover"
+                loading="lazy"
+              >
+              <div class="absolute top-4 left-4 bg-[#050505]/85 backdrop-blur-sm border border-[#F8C99B]/30 px-3 py-1 text-[10px] tracking-[0.2em] uppercase text-[#F8C99B]">
+                03 &bull; Textura
+              </div>
+            </div>
+            <div class="p-6 sm:p-7 flex-1 flex flex-col justify-between">
+              <div>
+                <h3 class="font-editorial text-2xl sm:text-3xl font-semibold text-[#F8C99B] mb-3">Cabelo Natural Volumoso</h3>
+                <p class="text-sm text-[#F5F3F0]/80 font-light leading-relaxed mb-6">
+                  Apanhado volumoso com textura encaracolada e mechas soltas junto ao rosto, realçando o movimento natural e um visual expressivo e elegante.
+                </p>
+              </div>
+              <div class="pt-4 border-t border-[#F8C99B]/12 space-y-4">
+                <div class="flex items-center justify-between text-xs">
+                  <span class="text-[#A39E98]">Valor (MT): <strong class="text-[#F8C99B] font-medium">Sob consulta</strong></span>
+                  <span class="text-[#A39E98]">Duração: <strong class="text-[#F5F3F0]/85 font-medium">A confirmar</strong></span>
+                </div>
+                <button type="button" data-select-service="Cabelo Natural Volumoso" class="w-full py-2.5 text-xs rounded-sm btn-secondary">
+                  Solicitar Estilo
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Service 04: Cornrows -->
+          <article class="md:col-span-4 bg-[#0c0c0d] border border-[#F8C99B]/15 rounded-sm overflow-hidden flex flex-col justify-between reveal-item group">
+            <div class="editorial-frame aspect-[4/3] w-full">
+              <img 
+                src="1000322647.jpg" 
+                alt="Cornrows — Tranças rasteiras alinhadas com precisão" 
+                class="w-full h-full object-cover"
+                loading="lazy"
+              >
+              <div class="absolute top-4 left-4 bg-[#050505]/85 backdrop-blur-sm border border-[#F8C99B]/30 px-3 py-1 text-[10px] tracking-[0.2em] uppercase text-[#F8C99B]">
+                04 &bull; Escultural
+              </div>
+            </div>
+            <div class="p-6 sm:p-7 flex-1 flex flex-col justify-between">
+              <div>
+                <h3 class="font-editorial text-2xl sm:text-3xl font-semibold text-[#F8C99B] mb-3">Cornrows</h3>
+                <p class="text-sm text-[#F5F3F0]/80 font-light leading-relaxed mb-6">
+                  Tranças rasteiras executadas com precisão artística, desde linhas minimalistas e elegantes até padrões geométricos personalizados.
+                </p>
+              </div>
+              <div class="pt-4 border-t border-[#F8C99B]/12 space-y-4">
+                <div class="flex items-center justify-between text-xs">
+                  <span class="text-[#A39E98]">Valor (MT): <strong class="text-[#F8C99B] font-medium">Sob consulta</strong></span>
+                  <span class="text-[#A39E98]">Duração: <strong class="text-[#F5F3F0]/85 font-medium">A confirmar</strong></span>
+                </div>
+                <button type="button" data-select-service="Cornrows" class="w-full py-2.5 text-xs rounded-sm btn-secondary">
+                  Solicitar Estilo
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Service 05: Two Strands Twists -->
+          <article class="md:col-span-4 bg-[#0c0c0d] border border-[#F8C99B]/15 rounded-sm overflow-hidden flex flex-col justify-between reveal-item group">
+            <div class="editorial-frame aspect-[4/3] w-full">
+              <img 
+                src="1000322650.jpg" 
+                alt="Two-Strands Twists — Penteado volumoso com textura encaracolada" 
+                class="w-full h-full object-cover"
+                loading="lazy"
+              >
+              <div class="absolute top-4 left-4 bg-[#050505]/85 backdrop-blur-sm border border-[#F8C99B]/30 px-3 py-1 text-[10px] tracking-[0.2em] uppercase text-[#F8C99B]">
+                05 &bull; Majestoso
+              </div>
+            </div>
+            <div class="p-6 sm:p-7 flex-1 flex flex-col justify-between">
+              <div>
+                <h3 class="font-editorial text-2xl sm:text-3xl font-semibold text-[#F8C99B] mb-3">Two-Strands Twists</h3>
+                <p class="text-sm text-[#F5F3F0]/80 font-light leading-relaxed mb-6">
+                  Tranças torcidas com divisões nítidas e torção uniforme, oferecendo um toque macio, leveza e um caimento natural ao longo do comprimento.
+                </p>
+              </div>
+              <div class="pt-4 border-t border-[#F8C99B]/12 space-y-4">
+                <div class="flex items-center justify-between text-xs">
+                  <span class="text-[#A39E98]">Valor (MT): <strong class="text-[#F8C99B] font-medium">Sob consulta</strong></span>
+                  <span class="text-[#A39E98]">Duração: <strong class="text-[#F5F3F0]/85 font-medium">A confirmar</strong></span>
+                </div>
+                <button type="button" data-select-service="Two-Strands Twists" class="w-full py-2.5 text-xs rounded-sm btn-secondary">
+                  Solicitar Estilo
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Service 06: Outros Penteados Protetores (Full-Width Horizontal Editorial Feature) -->
+          <article class="md:col-span-12 bg-[#0c0c0d] border border-[#092C68] rounded-sm overflow-hidden grid grid-cols-1 lg:grid-cols-12 reveal-item group">
+            <div class="lg:col-span-5 editorial-frame aspect-[16/10] lg:aspect-auto">
+              <img 
+                src="1000322651.jpg" 
+                alt="Outros Penteados Protetores e cuidados com o cabelo natural" 
+                class="w-full h-full object-cover"
+                loading="lazy"
+              >
+            </div>
+            <div class="lg:col-span-7 p-6 sm:p-10 flex flex-col justify-between bg-gradient-to-br from-[#0c0c0d] via-[#0c0c0d] to-[#092C68]/25">
+              <div>
+                <span class="inline-block text-[10px] tracking-[0.22em] uppercase text-[#F07819] mb-2">06 &bull; Sob Medida</span>
+                <h3 class="font-editorial text-3xl sm:text-4xl font-semibold text-[#F8C99B] mb-3">Outros Penteados Protetores</h3>
+                <p class="text-sm sm:text-base text-[#F5F3F0]/80 font-light leading-relaxed max-w-2xl mb-6">
+                  Tem uma referência específica ou pretende um penteado protector personalizado (twists, fulani braids, entre outros)? Avaliamos o estilo pretendido e adaptamos a execução ao seu cabelo.
+                </p>
+              </div>
+              <div class="pt-5 border-t border-[#F8C99B]/15 flex flex-wrap items-center justify-between gap-4">
+                <div class="flex items-center gap-8">
+                  <div>
+                    <span class="block text-[10px] uppercase tracking-[0.18em] text-[#A39E98]">Valor (MT)</span>
+                    <span class="text-sm font-medium text-[#F8C99B]">Sob consulta</span>
+                  </div>
+                  <div>
+                    <span class="block text-[10px] uppercase tracking-[0.18em] text-[#A39E98]">Duração Est.</span>
+                    <span class="text-sm font-medium text-[#F5F3F0]/85">A confirmar</span>
+                  </div>
+                </div>
+                <button type="button" data-select-service="Outro" class="px-6 py-3 text-xs rounded-sm btn-primary">
+                  Consultar Estilo Personalizado
+                </button>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         SECTION 05 — PRICING (TRANSPARENT PLACEHOLDER OVERVIEW)
+         ===================================================================== -->
+    <section id="precos" class="relative py-24 sm:py-32 bg-[#050505] border-t border-[#F8C99B]/10">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-10">
+        
+        <div class="text-center max-w-2xl mx-auto mb-16 reveal-item">
+          <div class="inline-flex items-center gap-3 mb-4">
+            <span class="h-[1px] w-8 bg-[#F07819]"></span>
+            <span class="text-xs font-medium tracking-[0.24em] uppercase text-[#F07819]">Transparência &amp; Orçamento</span>
+            <span class="h-[1px] w-8 bg-[#F07819]"></span>
+          </div>
+          <h2 class="font-editorial text-4xl sm:text-5xl font-semibold text-[#F8C99B] mb-4">
+            Guia de Serviços &amp; Valores
+          </h2>
+          <p class="text-sm sm:text-base text-[#A39E98] font-light">
+            Consulte a estrutura base dos nossos estilos em Meticais (MT). Os valores finais são confirmados mediante avaliação do pedido.
+          </p>
+        </div>
+
+        <!-- Responsive Pricing Table -->
+        <div class="bg-[#0c0c0d] border border-[#F8C99B]/15 rounded-sm overflow-hidden reveal-item">
+          <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse">
+              <thead>
+                <tr class="border-b border-[#F8C99B]/20 bg-[#111113]">
+                  <th class="py-4 px-5 sm:px-6 text-[11px] font-semibold tracking-[0.18em] uppercase text-[#F8C99B]">Estilo de Trança</th>
+                  <th class="py-4 px-5 sm:px-6 text-[11px] font-semibold tracking-[0.18em] uppercase text-[#F8C99B]">Comprimento</th>
+                  <th class="py-4 px-5 sm:px-6 text-[11px] font-semibold tracking-[0.18em] uppercase text-[#F8C99B]">Tamanho</th>
+                  <th class="py-4 px-5 sm:px-6 text-[11px] font-semibold tracking-[0.18em] uppercase text-[#F07819]">Preço Inicial (MT)</th>
+                  <th class="py-4 px-5 sm:px-6 text-[11px] font-semibold tracking-[0.18em] uppercase text-[#F8C99B]">Duração Estimada</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-[#F8C99B]/10 text-sm">
+                <tr class="hover:bg-white/[0.02] transition-colors">
+                  <td class="py-4 px-5 sm:px-6 font-editorial text-xl text-[#F5F3F0]">Two-Strands Twists</td>
+                  <td class="py-4 px-5 sm:px-6 text-[#A39E98]">Curto / Médio / Longo / Extra longo</td>
+                  <td class="py-4 px-5 sm:px-6 text-[#A39E98]">Pequeno / Médio / Grande</td>
+                  <td class="py-4 px-5 sm:px-6 font-medium text-[#F07819]">Sob consulta (MT)</td>
+                  <td class="py-4 px-5 sm:px-6 text-[#F5F3F0]/80">A confirmar</td>
+                </tr>
+                <tr class="hover:bg-white/[0.02] transition-colors">
+                  <td class="py-4 px-5 sm:px-6 font-editorial text-xl text-[#F5F3F0]">Box Braids</td>
+                  <td class="py-4 px-5 sm:px-6 text-[#A39E98]">Curto / Médio / Longo / Extra longo</td>
+                  <td class="py-4 px-5 sm:px-6 text-[#A39E98]">Pequeno / Médio / Grande</td>
+                  <td class="py-4 px-5 sm:px-6 font-medium text-[#F07819]">Sob consulta (MT)</td>
+                  <td class="py-4 px-5 sm:px-6 text-[#F5F3F0]/80">A confirmar</td>
+                </tr>
+                <tr class="hover:bg-white/[0.02] transition-colors">
+                  <td class="py-4 px-5 sm:px-6 font-editorial text-xl text-[#F5F3F0]">Cabelo Natural Volumoso</td>
+                  <td class="py-4 px-5 sm:px-6 text-[#A39E98]">Médio / Longo / Extra longo</td>
+                  <td class="py-4 px-5 sm:px-6 text-[#A39E98]">Pequeno / Médio</td>
+                  <td class="py-4 px-5 sm:px-6 font-medium text-[#F07819]">Sob consulta (MT)</td>
+                  <td class="py-4 px-5 sm:px-6 text-[#F5F3F0]/80">A confirmar</td>
+                </tr>
+                <tr class="hover:bg-white/[0.02] transition-colors">
+                  <td class="py-4 px-5 sm:px-6 font-editorial text-xl text-[#F5F3F0]">Cornrows</td>
+                  <td class="py-4 px-5 sm:px-6 text-[#A39E98]">Curto / Médio / Longo</td>
+                  <td class="py-4 px-5 sm:px-6 text-[#A39E98]">Personalizado</td>
+                  <td class="py-4 px-5 sm:px-6 font-medium text-[#F07819]">Sob consulta (MT)</td>
+                  <td class="py-4 px-5 sm:px-6 text-[#F5F3F0]/80">A confirmar</td>
+                </tr>
+                <tr class="hover:bg-white/[0.02] transition-colors">
+                  <td class="py-4 px-5 sm:px-6 font-editorial text-xl text-[#F5F3F0]">Boho Twists</td>
+                  <td class="py-4 px-5 sm:px-6 text-[#A39E98]">Médio / Longo / Extra longo</td>
+                  <td class="py-4 px-5 sm:px-6 text-[#A39E98]">Pequeno / Médio / Grande</td>
+                  <td class="py-4 px-5 sm:px-6 font-medium text-[#F07819]">Sob consulta (MT)</td>
+                  <td class="py-4 px-5 sm:px-6 text-[#F5F3F0]/80">A confirmar</td>
+                </tr>
+                <tr class="hover:bg-white/[0.02] transition-colors">
+                  <td class="py-4 px-5 sm:px-6 font-editorial text-xl text-[#F5F3F0]">Outros Penteados Protetores</td>
+                  <td class="py-4 px-5 sm:px-6 text-[#A39E98]">Sob avaliação</td>
+                  <td class="py-4 px-5 sm:px-6 text-[#A39E98]">Sob avaliação</td>
+                  <td class="py-4 px-5 sm:px-6 font-medium text-[#F07819]">Sob consulta (MT)</td>
+                  <td class="py-4 px-5 sm:px-6 text-[#F5F3F0]/80">A confirmar</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Mandatory Pricing & Travel Fee Notes -->
+          <div class="p-6 sm:p-8 bg-[#092C68]/15 border-t border-[#F8C99B]/15 flex flex-col sm:flex-row sm:items-center justify-between gap-6">
+            <div class="space-y-2 text-xs sm:text-sm text-[#F5F3F0]/85 font-light">
+              <p class="flex items-start gap-2.5">
+                <span class="text-[#F07819] font-bold">&bull;</span>
+                <span>Os preços podem variar consoante o comprimento, tamanho, complexidade e estilo pretendido.</span>
+              </p>
+              <p class="flex items-start gap-2.5">
+                <span class="text-[#F07819] font-bold">&bull;</span>
+                <span>Eventuais taxas de deslocação em Maputo, quando aplicáveis, serão sempre confirmadas antes da validação da marcação.</span>
+              </p>
+            </div>
+            <a href="#reservar" class="shrink-0 inline-flex items-center justify-center px-6 py-3 text-xs rounded-sm btn-primary">
+              Pedir Orçamento
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         SECTION 06 — GALLERY & LIGHTBOX
+         ===================================================================== -->
+    <section id="galeria" class="relative py-24 sm:py-32 bg-[#080809] border-t border-[#F8C99B]/10">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
+        
+        <div class="flex flex-col lg:flex-row lg:items-end justify-between mb-12 gap-6 reveal-item">
+          <div>
+            <div class="inline-flex items-center gap-3 mb-4">
+              <span class="h-[1px] w-8 bg-[#F07819]"></span>
+              <span class="text-xs font-medium tracking-[0.24em] uppercase text-[#F07819]">Direcção Visual</span>
+            </div>
+            <h2 class="font-editorial text-4xl sm:text-5xl lg:text-6xl font-semibold text-[#F8C99B]">
+              Galeria &amp; Inspiração
+            </h2>
+          </div>
+
+          <!-- Category Filter Pills -->
+          <div class="flex flex-wrap gap-2" role="tablist" aria-label="Filtrar galeria por estilo">
+            <button type="button" data-filter="all" class="gallery-filter-btn active px-4 py-2 text-xs tracking-[0.14em] uppercase rounded-sm border border-[#F07819] bg-[#F07819] text-[#050505] font-semibold transition-all">
+              Todos
+            </button>
+          </div>
+        </div>
+
+        <!-- Editorial Photography Grid -->
+        <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 reveal-item">
+          
+          <!-- Gallery Item 1 -->
+          <figure class="gallery-item editorial-frame aspect-[4/5] rounded-sm cursor-pointer group" data-category="Twist" data-index="0">
+            <img 
+              src="1000322646.jpg" 
+              alt="THE KNOTIES — Tranças com divisões definidas" 
+              class="w-full h-full object-cover"
+              loading="lazy"
+            >
+            <figcaption class="absolute inset-0 bg-gradient-to-t from-[#050505]/90 via-[#050505]/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6">
+              <span class="text-[10px] tracking-[0.2em] uppercase text-[#F07819]">Two-Strands Twists</span>
+              <p class="font-editorial text-2xl text-[#F8C99B]">Divisões Limpas &amp; Leveza</p>
+            </figcaption>
+          </figure>
+
+          <!-- Gallery Item 2 -->
+          <figure class="gallery-item editorial-frame aspect-[4/5] rounded-sm cursor-pointer group" data-category="box" data-index="1">
+            <img 
+              src="1000322649.jpg" 
+              alt="THE KNOTIES — Tranças médias com reflexos quentes" 
+              class="w-full h-full object-cover"
+              loading="lazy"
+            >
+            <figcaption class="absolute inset-0 bg-gradient-to-t from-[#050505]/90 via-[#050505]/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6">
+              <span class="text-[10px] tracking-[0.2em] uppercase text-[#F07819]">Box Braids</span>
+              <p class="font-editorial text-2xl text-[#F8C99B]">Comprimento Médio &amp; Fluidez</p>
+            </figcaption>
+          </figure>
+
+          <!-- Gallery Item 3 -->
+          <figure class="gallery-item editorial-frame aspect-[4/5] rounded-sm cursor-pointer group" data-category="Cabelo Natural Volumoso" data-index="2">
+            <img 
+              src="1000322648.jpg" 
+              alt="THE KNOTIES — Tranças com cachos soltos" 
+              class="w-full h-full object-cover"
+              loading="lazy"
+            >
+            <figcaption class="absolute inset-0 bg-gradient-to-t from-[#050505]/90 via-[#050505]/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6">
+              <span class="text-[10px] tracking-[0.2em] uppercase text-[#F07819]">Cabelo Natural Volumoso</span>
+              <p class="font-editorial text-2xl text-[#F8C99B]">Textura Orgânica &amp; Cachos</p>
+            </figcaption>
+          </figure>
+
+          <!-- Gallery Item 4 -->
+          <figure class="gallery-item editorial-frame aspect-[4/5] rounded-sm cursor-pointer group" data-category="cornrows" data-index="3">
+            <img 
+              src="1000322647.jpg" 
+              alt="THE KNOTIES — Cornrows rasteiras detalhadas" 
+              class="w-full h-full object-cover"
+              loading="lazy"
+            >
+            <figcaption class="absolute inset-0 bg-gradient-to-t from-[#050505]/90 via-[#050505]/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6">
+              <span class="text-[10px] tracking-[0.2em] uppercase text-[#F07819]">Cornrows</span>
+              <p class="font-editorial text-2xl text-[#F8C99B]">Linhas Definidas &amp; Precisão</p>
+            </figcaption>
+          </figure>
+
+          <!-- Gallery Item 5 -->
+          <figure class="gallery-item editorial-frame aspect-[4/5] rounded-sm cursor-pointer group" data-category="Cabelo Natural Volumoso" data-index="4">
+            <img 
+              src="1000322650.jpg" 
+              alt="THE KNOTIES — Estilo volumoso com ondas naturais" 
+              class="w-full h-full object-cover"
+              loading="lazy"
+            >
+            <figcaption class="absolute inset-0 bg-gradient-to-t from-[#050505]/90 via-[#050505]/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6">
+              <span class="text-[10px] tracking-[0.2em] uppercase text-[#F07819]">Boho Twists</span>
+              <p class="font-editorial text-2xl text-[#F8C99B]">Volume &amp; Sofisticação</p>
+            </figcaption>
+          </figure>
+
+          <!-- Gallery Item 6 -->
+          <figure class="gallery-item editorial-frame aspect-[4/5] rounded-sm cursor-pointer group" data-category="twists" data-index="5">
+            <img 
+              src="1000322645.jpg" 
+              alt="THE KNOTIES — Acabamento de tranças por Aline Benilde" 
+              class="w-full h-full object-cover"
+              loading="lazy"
+            >
+            <figcaption class="absolute inset-0 bg-gradient-to-t from-[#050505]/90 via-[#050505]/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6">
+              <span class="text-[10px] tracking-[0.2em] uppercase text-[#F07819]">Assinatura THE KNOTIES</span>
+              <p class="font-editorial text-2xl text-[#F8C99B]">Execução &amp; Detalhe</p>
+            </figcaption>
+          </figure>
+
+        </div>
+
+        <!-- Honest Photography Note -->
+        <p class="mt-8 text-xs text-[#A39E98]/80 italic text-center">
+          Nota: Fotografias de trabalhos e referências visuais da THE KNOTIES.
+        </p>
+
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         SECTION 07 — MOBILE SERVICE EXPERIENCE
+         ===================================================================== -->
+    <section id="servico-movel" class="relative py-24 sm:py-32 bg-[#050505] border-t border-[#F8C99B]/10 overflow-hidden">
+      <!-- Subtle Navy Ambient Glow -->
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] navy-ambient-accent pointer-events-none"></div>
+
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
+        <div class="bg-[#0c0c0d]/90 border border-[#F8C99B]/18 rounded-sm p-8 sm:p-12 lg:p-16">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+            
+            <div class="lg:col-span-7 reveal-item">
+              <div class="inline-flex items-center gap-3 mb-4">
+                <span class="h-[1px] w-8 bg-[#F07819]"></span>
+                <span class="text-xs font-medium tracking-[0.24em] uppercase text-[#F07819]">Experiência Exclusiva ao Domicílio</span>
+              </div>
+
+              <h2 class="font-editorial text-4xl sm:text-5xl lg:text-6xl font-semibold text-[#F8C99B] leading-[1.08] mb-6">
+                Beleza e conveniência, onde estiver.
+              </h2>
+
+              <p class="text-base sm:text-lg text-[#F5F3F0]/85 font-light leading-relaxed mb-8">
+                A sua experiência de beleza não precisa de começar num salão. A <strong class="text-[#F8C99B] font-medium">THE KNOTIES</strong> leva o cuidado, a criatividade e a qualidade das nossas tranças até ao local da sua preferência, em Maputo.
+              </p>
+
+              <a href="#reservar" class="inline-flex items-center justify-center px-8 py-4 text-xs sm:text-sm rounded-sm btn-primary">
+                MARCAR O MEU HORÁRIO
+              </a>
+            </div>
+
+            <!-- 3-Step Mobile Process -->
+            <div class="lg:col-span-5 space-y-6 reveal-item">
+              <div class="p-6 bg-[#050505]/80 border-l-2 border-[#F07819]">
+                <span class="text-xs font-semibold tracking-[0.2em] uppercase text-[#F07819]">01 &bull; Pedido Personalizado</span>
+                <h3 class="font-editorial text-2xl text-[#F8C99B] mt-1">Escolha o Estilo &amp; Local</h3>
+                <p class="text-sm text-[#A39E98] mt-1.5 font-light leading-relaxed">
+                  Indique o tipo de trança, comprimento, data preferida e o endereço em Maputo onde deseja ser atendida.
+                </p>
+              </div>
+
+              <div class="p-6 bg-[#050505]/80 border-l-2 border-[#F8C99B]/50">
+                <span class="text-xs font-semibold tracking-[0.2em] uppercase text-[#F8C99B]">02 &bull; Validação de Disponibilidade</span>
+                <h3 class="font-editorial text-2xl text-[#F8C99B] mt-1">Confirmação Directa</h3>
+                <p class="text-sm text-[#A39E98] mt-1.5 font-light leading-relaxed">
+                  A nossa equipa analisa o seu pedido, confirma a disponibilidade de agenda, o orçamento em MT e eventuais taxas de deslocação.
+                </p>
+              </div>
+
+              <div class="p-6 bg-[#050505]/80 border-l-2 border-[#092C68]">
+                <span class="text-xs font-semibold tracking-[0.2em] uppercase text-[#F8C99B]">03 &bull; Sessão Privada</span>
+                <h3 class="font-editorial text-2xl text-[#F8C99B] mt-1">Atendimento no Seu Espaço</h3>
+                <p class="text-sm text-[#A39E98] mt-1.5 font-light leading-relaxed">
+                  Desfrute de um serviço dedicado, tranquilo e pontual sem sair do seu conforto.
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         SECTION 08 — BOOKING SYSTEM (APPOINTMENT REQUEST + WHATSAPP)
+         ===================================================================== -->
+    <section id="reservar" class="relative py-24 sm:py-32 bg-[#080809] border-t border-[#F8C99B]/10">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-10">
+        
+        <div class="text-center mb-14 reveal-item">
+          <div class="inline-flex items-center gap-3 mb-4">
+            <span class="h-[1px] w-8 bg-[#F07819]"></span>
+            <span class="text-xs font-medium tracking-[0.24em] uppercase text-[#F07819]">Pedido de Marcação</span>
+            <span class="h-[1px] w-8 bg-[#F07819]"></span>
+          </div>
+          <h2 class="font-editorial text-4xl sm:text-5xl lg:text-6xl font-semibold text-[#F8C99B] mb-4">
+            A sua próxima transformação começa aqui.
+          </h2>
+          <p class="text-sm sm:text-base text-[#A39E98] max-w-xl mx-auto font-light leading-relaxed">
+            Escolha o seu estilo e solicite a sua marcação. Entraremos em contacto para confirmar a disponibilidade e finalizar os detalhes do atendimento.
+          </p>
+        </div>
+
+        <!-- Appointment Request Form -->
+        <div class="bg-[#0c0c0d] border border-[#F8C99B]/18 rounded-sm p-6 sm:p-10 lg:p-12 shadow-2xl reveal-item">
+          <form id="booking-form" novalidate class="space-y-6">
+            
+            <!-- Group 1: Personal Info -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div>
+                <label for="fullName" class="block text-xs font-medium tracking-[0.12em] uppercase text-[#F8C99B] mb-2">
+                  Nome completo <span class="text-[#F07819]">*</span>
+                </label>
+                <input 
+                  type="text" 
+                  id="fullName" 
+                  name="fullName" 
+                  required 
+                  placeholder="Ex: Ana Maria Sitoe"
+                  class="form-input w-full px-4 py-3.5 text-sm rounded-sm"
+                >
+                <p id="error-fullName" class="hidden mt-1.5 text-xs text-red-400"></p>
+              </div>
+
+              <div>
+                <label for="phone" class="block text-xs font-medium tracking-[0.12em] uppercase text-[#F8C99B] mb-2">
+                  Número de telefone / WhatsApp <span class="text-[#F07819]">*</span>
+                </label>
+                <input 
+                  type="tel" 
+                  id="phone" 
+                  name="phone" 
+                  required 
+                  placeholder="Ex: +258 84 000 0000"
+                  class="form-input w-full px-4 py-3.5 text-sm rounded-sm"
+                >
+                <p id="error-phone" class="hidden mt-1.5 text-xs text-red-400"></p>
+              </div>
+            </div>
+
+            <div>
+              <label for="email" class="block text-xs font-medium tracking-[0.12em] uppercase text-[#F8C99B] mb-2">
+                Endereço de email <span class="text-[#A39E98] lowercase tracking-normal font-normal">(opcional)</span>
+              </label>
+              <input 
+                type="email" 
+                id="email" 
+                name="email" 
+                placeholder="Ex: cliente@exemplo.co.mz"
+                class="form-input w-full px-4 py-3.5 text-sm rounded-sm"
+              >
+              <p id="error-email" class="hidden mt-1.5 text-xs text-red-400"></p>
+            </div>
+
+            <!-- Group 2: Hairstyle Specifications -->
+            <div class="pt-4 border-t border-[#F8C99B]/10 grid grid-cols-1 sm:grid-cols-3 gap-6">
+              <div>
+                <label for="braidType" class="block text-xs font-medium tracking-[0.12em] uppercase text-[#F8C99B] mb-2">
+                  Tipo de trança <span class="text-[#F07819]">*</span>
+                </label>
+                <select id="braidType" name="braidType" required class="form-input w-full px-4 py-3.5 text-sm rounded-sm">
+                  <option value="">Seleccionar estilo...</option>
+                  <option value="Two-Strand Twists">Two-Strand Twists</option>
+                  <option value="Box Braids">Box Braids</option>
+                  <option value="Cabelo Natural Volumoso">Cabelo Natural Volumoso</option>
+                  <option value="Cornrows">Cornrows</option>
+                  <option value="Boho Twists">Boho Twists</option>
+                  <option value="Outro">Outro</option>
+                </select>
+                <p id="error-braidType" class="hidden mt-1.5 text-xs text-red-400"></p>
+              </div>
+
+              <div>
+                <label for="length" class="block text-xs font-medium tracking-[0.12em] uppercase text-[#F8C99B] mb-2">
+                  Comprimento pretendido <span class="text-[#F07819]">*</span>
+                </label>
+                <select id="length" name="length" required class="form-input w-full px-4 py-3.5 text-sm rounded-sm">
+                  <option value="">Seleccionar...</option>
+                  <option value="Curto">Curto</option>
+                  <option value="Médio">Médio</option>
+                  <option value="Longo">Longo</option>
+                  <option value="Extra longo">Extra longo</option>
+                </select>
+                <p id="error-length" class="hidden mt-1.5 text-xs text-red-400"></p>
+              </div>
+
+              <div>
+                <label for="size" class="block text-xs font-medium tracking-[0.12em] uppercase text-[#F8C99B] mb-2">
+                  Tamanho das tranças <span class="text-[#F07819]">*</span>
+                </label>
+                <select id="size" name="size" required class="form-input w-full px-4 py-3.5 text-sm rounded-sm">
+                  <option value="">Seleccionar...</option>
+                  <option value="Pequeno">Pequeno</option>
+                  <option value="Médio">Médio</option>
+                  <option value="Grande">Grande</option>
+                  <option value="Aconselhamento profissional">Aconselhamento profissional</option>
+                </select>
+                <p id="error-size" class="hidden mt-1.5 text-xs text-red-400"></p>
+              </div>
+            </div>
+
+            <!-- Group 3: Date, Time & Mobile Location -->
+            <div class="pt-4 border-t border-[#F8C99B]/10 grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div>
+                <label for="preferredDate" class="block text-xs font-medium tracking-[0.12em] uppercase text-[#F8C99B] mb-2">
+                  Data pretendida <span class="text-[#F07819]">*</span>
+                </label>
+                <input 
+                  type="date" 
+                  id="preferredDate" 
+                  name="preferredDate" 
+                  required 
+                  class="form-input w-full px-4 py-3.5 text-sm rounded-sm"
+                >
+                <p id="error-preferredDate" class="hidden mt-1.5 text-xs text-red-400"></p>
+              </div>
+
+              <div>
+                <label for="preferredTime" class="block text-xs font-medium tracking-[0.12em] uppercase text-[#F8C99B] mb-2">
+                  Hora preferida <span class="text-[#F07819]">*</span>
+                </label>
+                <input 
+                  type="time" 
+                  id="preferredTime" 
+                  name="preferredTime" 
+                  required 
+                  class="form-input w-full px-4 py-3.5 text-sm rounded-sm"
+                >
+                <p id="error-preferredTime" class="hidden mt-1.5 text-xs text-red-400"></p>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div>
+                <label for="neighborhood" class="block text-xs font-medium tracking-[0.12em] uppercase text-[#F8C99B] mb-2">
+                  Bairro / localização <span class="text-[#F07819]">*</span>
+                </label>
+                <input 
+                  type="text" 
+                  id="neighborhood" 
+                  name="neighborhood" 
+                  required 
+                  placeholder="Ex: Polana Cimento, Sommerschield, Triunfo..."
+                  class="form-input w-full px-4 py-3.5 text-sm rounded-sm"
+                >
+                <p id="error-neighborhood" class="hidden mt-1.5 text-xs text-red-400"></p>
+              </div>
+
+              <div>
+                <label for="fullAddress" class="block text-xs font-medium tracking-[0.12em] uppercase text-[#F8C99B] mb-2">
+                  Endereço completo <span class="text-[#F07819]">*</span>
+                </label>
+                <input 
+                  type="text" 
+                  id="fullAddress" 
+                  name="fullAddress" 
+                  required 
+                  placeholder="Avenida / Rua, número, ponto de referência"
+                  class="form-input w-full px-4 py-3.5 text-sm rounded-sm"
+                >
+                <p id="error-fullAddress" class="hidden mt-1.5 text-xs text-red-400"></p>
+              </div>
+            </div>
+
+            <div>
+              <label for="notes" class="block text-xs font-medium tracking-[0.12em] uppercase text-[#F8C99B] mb-2">
+                Observações adicionais <span class="text-[#A39E98] lowercase tracking-normal font-normal">(opcional)</span>
+              </label>
+              <textarea 
+                id="notes" 
+                name="notes" 
+                rows="3" 
+                placeholder="Cor pretendida, disponibilidade de extensões, detalhes sobre o seu cabelo ou instruções de acesso..."
+                class="form-input w-full px-4 py-3.5 text-sm rounded-sm"
+              ></textarea>
+            </div>
+
+            <!-- Submission Notice & Submit Button -->
+            <div class="pt-4 space-y-4">
+              <p class="text-xs text-[#A39E98] font-light leading-relaxed">
+                Este formulário envia um <strong class="text-[#F8C99B] font-medium">pedido de marcação</strong>. A sua reserva será confirmada manualmente pela equipa THE KNOTIES após verificação de agenda e localização.
+              </p>
+
+              <button 
+                type="submit" 
+                id="booking-submit-btn"
+                class="w-full py-4 px-8 text-xs sm:text-sm rounded-sm btn-primary flex items-center justify-center gap-3"
+              >
+                <span id="submit-btn-text">ENVIAR PEDIDO DE MARCAÇÃO</span>
+                <svg id="submit-spinner" class="hidden animate-spin h-4 w-4 text-[#050505]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                  <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                  <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+              </button>
+            </div>
+          </form>
+
+          <!-- Booking Feedback & WhatsApp Summary Panel -->
+          <div id="booking-feedback" class="hidden mt-8 p-6 sm:p-8 rounded-sm border border-[#F07819]/50 bg-[#050505] space-y-5" role="status" aria-live="polite">
+            <div class="flex items-start justify-between gap-4">
+              <div>
+                <span class="inline-block text-[10px] tracking-[0.22em] uppercase text-[#F07819] mb-1">Resumo do Pedido Preparado</span>
+                <h3 id="feedback-title" class="font-editorial text-2xl sm:text-3xl text-[#F8C99B]">
+                  Pedido de Marcação Pronto a Enviar
+                </h3>
+              </div>
+              <button type="button" id="close-feedback-btn" class="text-xs text-[#A39E98] hover:text-[#F8C99B] underline">
+                Fechar
+              </button>
+            </div>
+
+            <p id="feedback-description" class="text-sm text-[#F5F3F0]/85 font-light leading-relaxed">
+              O seu pedido foi validado. Caso o WhatsApp não tenha aberto automaticamente, utilize os botões abaixo para enviar ou copiar a mensagem formatada.
+            </p>
+
+            <!-- Formatted Message Preview -->
+            <pre id="whatsapp-message-preview" class="p-4 bg-[#0c0c0d] border border-[#F8C99B]/15 rounded-sm text-xs text-[#F5F3F0]/90 whitespace-pre-wrap font-sans leading-relaxed overflow-x-auto"></pre>
+
+            <div class="flex flex-col sm:flex-row gap-3 pt-2">
+              <a id="direct-whatsapp-link" href="#" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-6 py-3 text-xs rounded-sm btn-primary">
+                Abrir no WhatsApp
+              </a>
+              <button type="button" id="copy-booking-btn" class="inline-flex items-center justify-center px-6 py-3 text-xs rounded-sm btn-secondary">
+                Copiar Resumo do Pedido
+              </button>
+            </div>
+            <p id="copy-confirmation-msg" class="hidden text-xs text-[#F07819]">
+              Resumo copiado para a área de transferência.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         SECTION 09 — CONTACT SECTION
+         ===================================================================== -->
+    <section id="contactos" class="relative py-24 sm:py-28 bg-[#050505] border-t border-[#F8C99B]/10">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          <div class="lg:col-span-5 reveal-item">
+            <div class="inline-flex items-center gap-3 mb-4">
+              <span class="h-[1px] w-8 bg-[#F07819]"></span>
+              <span class="text-xs font-medium tracking-[0.24em] uppercase text-[#F07819]">Contactos</span>
+            </div>
+            <h2 class="font-editorial text-4xl sm:text-5xl font-semibold text-[#F8C99B] mb-5">
+              Fale Connosco
+            </h2>
+            <p class="text-sm sm:text-base text-[#A39E98] font-light leading-relaxed mb-8">
+              Para esclarecimentos sobre estilos, disponibilidade de datas ou pedidos especiais em Maputo, entre em contacto através dos nossos canais directos.
+            </p>
+            <button type="button" id="contact-whatsapp-btn" class="inline-flex items-center justify-center px-7 py-3.5 text-xs rounded-sm btn-primary">
+              Contactar via WhatsApp
+            </button>
+            <p id="contact-whatsapp-notice" class="hidden mt-3 text-xs text-[#F8C99B]"></p>
+          </div>
+
+          <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6 reveal-item">
+            <!-- WhatsApp Placeholder Card -->
+            <div class="p-6 bg-[#0c0c0d] border border-[#F8C99B]/15 rounded-sm">
+              <span class="text-[10px] tracking-[0.2em] uppercase text-[#F07819]">WhatsApp &amp; Marcações</span>
+              <h3 class="font-editorial text-2xl text-[#F8C99B] mt-2 mb-2">Atendimento Directo</h3>
+              <p id="display-whatsapp-placeholder" class="text-sm text-[#F5F3F0]/85 font-light">
+                +258 908 9494
+              </p>
+              <p class="text-xs text-[#A39E98] mt-2">
+                Resposta mediante disponibilidade de agenda.
+              </p>
+            </div>
+
+            <!-- Instagram Placeholder Card -->
+            <div class="p-6 bg-[#0c0c0d] border border-[#F8C99B]/15 rounded-sm">
+              <span class="text-[10px] tracking-[0.2em] uppercase text-[#F07819]">Instagram Oficial</span>
+              <h3 class="font-editorial text-2xl text-[#F8C99B] mt-2 mb-2">Portfólio &amp; Novidades</h3>
+              <p id="display-instagram-placeholder" class="text-sm text-[#F5F3F0]/85 font-light">
+                @[INSERIR_INSTAGRAM_THE_KNOTIES]
+              </p>
+              <p class="text-xs text-[#A39E98] mt-2">
+                Acompanhe as nossas criações e inspirações.
+              </p>
+            </div>
+
+            <!-- Email Placeholder Card -->
+            <div class="p-6 bg-[#0c0c0d] border border-[#F8C99B]/15 rounded-sm">
+              <span class="text-[10px] tracking-[0.2em] uppercase text-[#F07819]">Correio Electrónico</span>
+              <h3 class="font-editorial text-2xl text-[#F8C99B] mt-2 mb-2">Informações Gerais</h3>
+              <p id="display-email-placeholder" class="text-sm text-[#F5F3F0]/85 font-light">
+                [INSERIR_EMAIL_DA_EMPRESA]
+              </p>
+              <p class="text-xs text-[#A39E98] mt-2">
+                Para parcerias, eventos e consultas gerais.
+              </p>
+            </div>
+
+            <!-- Service Model Card -->
+            <div class="p-6 bg-[#0c0c0d] border border-[#F8C99B]/15 rounded-sm">
+              <span class="text-[10px] tracking-[0.2em] uppercase text-[#F07819]">Área de Actuação</span>
+              <h3 class="font-editorial text-2xl text-[#F8C99B] mt-2 mb-2">Serviço Móvel — Maputo</h3>
+              <p class="text-sm text-[#F5F3F0]/85 font-light">
+                Atendimento exclusivo ao domicílio ou local indicado pela cliente.
+              </p>
+              <p class="text-xs text-[#A39E98] mt-2">
+                Sem espaço físico aberto ao público.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- =====================================================================
+       SECTION 10 — FOOTER
+       ===================================================================== -->
+  <footer class="bg-[#050505] border-t border-[#F8C99B]/15 pt-16 pb-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-[#F8C99B]/10">
+        
+        <!-- Brand Column -->
+        <div class="md:col-span-5 space-y-4">
+          <a href="#inicio" class="inline-block">
+            <img 
+              src="1000322495.jpg" 
+              alt="THE KNOTIES — Tied by Culture. Defined by Style." 
+              class="brand-logo-img h-20 w-auto"
+              onerror="this.style.display='none'"
+            >
+          </a>
+          <p class="text-xs tracking-[0.24em] uppercase text-[#F07819] font-medium">
+            TIED BY CULTURE. DEFINED BY STYLE.
+          </p>
+          <p class="text-sm text-[#A39E98] font-light max-w-sm leading-relaxed">
+            Serviço móvel de tranças profissionais em Maputo, Moçambique. Elegância, identidade cultural e precisão levadas até si.
+          </p>
+        </div>
+
+        <!-- Navigation Links -->
+        <div class="md:col-span-3 space-y-3">
+          <h3 class="text-xs font-semibold tracking-[0.2em] uppercase text-[#F8C99B]">Navegação</h3>
+          <ul class="space-y-2.5 text-sm text-[#A39E98]">
+            <li><a href="#inicio" class="hover:text-[#F07819] transition-colors">Início</a></li>
+            <li><a href="#sobre" class="hover:text-[#F07819] transition-colors">Sobre Nós</a></li>
+            <li><a href="#servicos" class="hover:text-[#F07819] transition-colors">Serviços</a></li>
+            <li><a href="#precos" class="hover:text-[#F07819] transition-colors">Tabela de Preços</a></li>
+            <li><a href="#galeria" class="hover:text-[#F07819] transition-colors">Galeria</a></li>
+            <li><a href="#reservar" class="hover:text-[#F07819] transition-colors">Reservar Agora</a></li>
+          </ul>
+        </div>
+
+        <!-- Direct Actions -->
+        <div class="md:col-span-4 space-y-4">
+          <h3 class="text-xs font-semibold tracking-[0.2em] uppercase text-[#F8C99B]">Marcações &amp; Social</h3>
+          <p class="text-sm text-[#A39E98] font-light">
+            Solicite o seu horário online ou acompanhe o nosso trabalho nas redes sociais.
+          </p>
+          <div class="flex flex-wrap gap-3 pt-1">
+            <a href="#reservar" class="px-5 py-2.5 text-xs rounded-sm btn-primary">
+              Solicitar Marcação
+            </a>
+            <a id="footer-instagram-link" href="#contactos" class="px-5 py-2.5 text-xs rounded-sm btn-secondary">
+              Instagram
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#A39E98]/80">
+        <p>&copy; <span id="current-year"></span> THE KNOTIES. Todos os direitos reservados.</p>
+        <p>Maputo, Moçambique &bull; Serviço Móvel de Beleza</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =====================================================================
+       GALLERY LIGHTBOX MODAL
+       ===================================================================== -->
+  <div id="gallery-lightbox" class="lightbox-backdrop fixed inset-0 z-50 bg-[#050505]/95 backdrop-blur-md flex items-center justify-center p-4 sm:p-8" role="dialog" aria-modal="true" aria-label="Visualizador de Imagem">
+    
+    <!-- Close Button -->
+    <button id="lightbox-close" type="button" class="absolute top-5 right-5 sm:top-8 sm:right-8 z-20 p-3 text-[#F8C99B] hover:text-[#F07819] border border-[#F8C99B]/25 rounded-sm bg-[#050505]/80 transition-colors" aria-label="Fechar galeria">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+      </svg>
+    </button>
+
+    <!-- Previous Button -->
+    <button id="lightbox-prev" type="button" class="absolute left-3 sm:left-8 z-20 p-3 text-[#F8C99B] hover:text-[#F07819] border border-[#F8C99B]/25 rounded-sm bg-[#050505]/80 transition-colors" aria-label="Imagem anterior">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/>
+      </svg>
+    </button>
+
+    <!-- Image Container -->
+    <div class="max-w-4xl max-h-[85vh] flex flex-col items-center">
+      <img id="lightbox-img" src="" alt="" class="max-h-[72vh] w-auto object-contain rounded-sm border border-[#F8C99B]/20 shadow-2xl">
+      <div class="mt-4 text-center">
+        <span id="lightbox-category" class="block text-[10px] tracking-[0.22em] uppercase text-[#F07819]"></span>
+        <p id="lightbox-caption" class="font-editorial text-xl sm:text-2xl text-[#F8C99B] mt-1"></p>
+      </div>
+    </div>
+
+    <!-- Next Button -->
+    <button id="lightbox-next" type="button" class="absolute right-3 sm:right-8 z-20 p-3 text-[#F8C99B] hover:text-[#F07819] border border-[#F8C99B]/25 rounded-sm bg-[#050505]/80 transition-colors" aria-label="Próxima imagem">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- =====================================================================
+       APPLICATION JAVASCRIPT (MODULAR, MAINTAINABLE & PRODUCTION-READY)
+       ===================================================================== -->
+  <script>
+    /**
+     * =========================================================================
+     * CLIENT CONFIGURATION — EDITABLE BUSINESS PARAMETERS
+     * Update these constants once the client confirms official contact details.
+     * =========================================================================
+     */
+    const BRAND_CONFIG = {
+      brandName: "THE KNOTIES",
+      countryCode: "+258",
+      // Replace "INSERIR_NUMERO_DA_EMPRESA" with digits only (e.g., "258841234567")
+      WHATSAPP_NUMBER: "258849089494",
+      INSTAGRAM_HANDLE: "Brevemente...",
+      INSTAGRAM_URL: "", // Optional full URL e.g. "https://instagram.com/..."
+      EMAIL_ADDRESS: "Brevemente...",
+      // Optional future backend endpoint (e.g. Formspree, Supabase Edge Function, custom API)
+      BACKEND_ENDPOINT: ""
+    };
+
+    document.addEventListener("DOMContentLoaded", () => {
+      // Set dynamic copyright year
+      const yearEl = document.getElementById("current-year");
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+      // Hydrate Contact Placeholders cleanly from BRAND_CONFIG
+      hydrateContactConfig();
+
+      // Initialize Navigation & Mobile Drawer
+      initNavigation();
+
+      // Initialize Scroll Reveal Animations (Intersection Observer)
+      initScrollReveal();
+
+      // Initialize Service Selection Shortcuts
+      initServiceSelectors();
+
+      // Initialize Gallery Filtering & Lightbox
+      initGalleryAndLightbox();
+
+      // Initialize Booking Form Validation & WhatsApp Submission
+      initBookingSystem();
+    });
+
+    /**
+     * Hydrates contact section & footer links from BRAND_CONFIG without inventing data.
+     */
+    function hydrateContactConfig() {
+      const waPlaceholderEl = document.getElementById("display-whatsapp-placeholder");
+      const igPlaceholderEl = document.getElementById("display-instagram-placeholder");
+      const emailPlaceholderEl = document.getElementById("display-email-placeholder");
+      const footerIgLink = document.getElementById("footer-instagram-link");
+      const contactWaBtn = document.getElementById("contact-whatsapp-btn");
+      const contactWaNotice = document.getElementById("contact-whatsapp-notice");
+
+      const isWaConfigured = BRAND_CONFIG.WHATSAPP_NUMBER && !BRAND_CONFIG.WHATSAPP_NUMBER.includes("INSERIR");
+
+      if (waPlaceholderEl) {
+        waPlaceholderEl.textContent = isWaConfigured
+          ? `+${BRAND_CONFIG.WHATSAPP_NUMBER.replace(/^\+/, "")}`
+          : "+258 [INSERIR NÚMERO DA EMPRESA]";
+      }
+
+      if (igPlaceholderEl) {
+        igPlaceholderEl.textContent = `@${BRAND_CONFIG.INSTAGRAM_HANDLE}`;
+      }
+
+      if (emailPlaceholderEl) {
+        emailPlaceholderEl.textContent = BRAND_CONFIG.EMAIL_ADDRESS;
+      }
+
+      if (footerIgLink && BRAND_CONFIG.INSTAGRAM_URL) {
+        footerIgLink.href = BRAND_CONFIG.INSTAGRAM_URL;
+        footerIgLink.target = "_blank";
+        footerIgLink.rel = "noopener noreferrer";
+      }
+
+      if (contactWaBtn) {
+        contactWaBtn.addEventListener("click", () => {
+          if (isWaConfigured) {
+            const cleanNum = BRAND_CONFIG.WHATSAPP_NUMBER.replace(/\D/g, "");
+            const text = encodeURIComponent("Olá THE KNOTIES! Gostaria de obter mais informações sobre os vossos serviços de tranças em Maputo.");
+            window.open(`https://wa.me/${cleanNum}?text=${text}`, "_blank", "noopener,noreferrer");
+          } else if (contactWaNotice) {
+            contactWaNotice.textContent = "O número oficial de WhatsApp será activado em breve. Por favor, utilize o formulário de pedido de marcação acima.";
+            contactWaNotice.classList.remove("hidden");
+          }
+        });
+      }
+    }
+
+    /**
+     * Navigation scroll transition and accessible mobile drawer controls.
+     */
+    function initNavigation() {
+      const navbar = document.getElementById("navbar");
+      const menuBtn = document.getElementById("mobile-menu-btn");
+      const closeBtn = document.getElementById("mobile-menu-close");
+      const drawer = document.getElementById("mobile-drawer");
+      const overlay = document.getElementById("mobile-drawer-overlay");
+      const mobileLinks = document.querySelectorAll(".mobile-nav-link");
+
+      const handleScroll = () => {
+        if (window.scrollY > 40) {
+          navbar.classList.remove("navbar-initial");
+          navbar.classList.add("navbar-scrolled");
+        } else {
+          navbar.classList.add("navbar-initial");
+          navbar.classList.remove("navbar-scrolled");
+        }
+      };
+
+      window.addEventListener("scroll", handleScroll, { passive: true });
+      handleScroll();
+
+      const openDrawer = () => {
+        drawer.classList.add("open");
+        overlay.classList.remove("hidden");
+        menuBtn.setAttribute("aria-expanded", "true");
+        document.body.style.overflow = "hidden";
+      };
+
+      const closeDrawer = () => {
+        drawer.classList.remove("open");
+        overlay.classList.add("hidden");
+        menuBtn.setAttribute("aria-expanded", "false");
+        document.body.style.overflow = "";
+      };
+
+      menuBtn.addEventListener("click", openDrawer);
+      closeBtn.addEventListener("click", closeDrawer);
+      overlay.addEventListener("click", closeDrawer);
+
+      mobileLinks.forEach(link => {
+        link.addEventListener("click", closeDrawer);
+      });
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && drawer.classList.contains("open")) {
+          closeDrawer();
+        }
+      });
+    }
+
+    /**
+     * Subtle Intersection Observer scroll reveal respecting prefers-reduced-motion.
+     */
+    function initScrollReveal() {
+      const items = document.querySelectorAll(".reveal-item");
+      if (!("IntersectionObserver" in window)) {
+        items.forEach(el => el.classList.add("is-visible"));
+        return;
+      }
+
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            obs.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.12,
+        rootMargin: "0px 0px -40px 0px"
+      });
+
+      items.forEach(el => observer.observe(el));
+    }
+
+    /**
+     * Pre-selects a hairstyle in the booking form when clicking a service CTA.
+     */
+    function initServiceSelectors() {
+      const buttons = document.querySelectorAll("[data-select-service]");
+      const braidSelect = document.getElementById("braidType");
+      const bookingSection = document.getElementById("reservar");
+
+      buttons.forEach(btn => {
+        btn.addEventListener("click", () => {
+          const serviceName = btn.getAttribute("data-select-service");
+          if (braidSelect && serviceName) {
+            braidSelect.value = serviceName;
+            braidSelect.classList.remove("input-error");
+            const errEl = document.getElementById("error-braidType");
+            if (errEl) errEl.classList.add("hidden");
+          }
+          if (bookingSection) {
+            bookingSection.scrollIntoView({ behavior: "smooth" });
+          }
+        });
+      });
+    }
+
+    /**
+     * Category filtering and full-screen accessible Lightbox for the Gallery.
+     */
+    function initGalleryAndLightbox() {
+      const filterBtns = document.querySelectorAll(".gallery-filter-btn");
+      const galleryItems = Array.from(document.querySelectorAll(".gallery-item"));
+      const lightbox = document.getElementById("gallery-lightbox");
+      const lightboxImg = document.getElementById("lightbox-img");
+      const lightboxCat = document.getElementById("lightbox-category");
+      const lightboxCap = document.getElementById("lightbox-caption");
+      const closeBtn = document.getElementById("lightbox-close");
+      const prevBtn = document.getElementById("lightbox-prev");
+      const nextBtn = document.getElementById("lightbox-next");
+
+      let currentVisibleItems = [...galleryItems];
+      let currentIndex = 0;
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener("click", () => {
+          const filter = btn.getAttribute("data-filter");
+
+          filterBtns.forEach(b => {
+            b.classList.remove("bg-[#F07819]", "text-[#050505]", "border-[#F07819]", "font-semibold");
+            b.classList.add("border-[#F8C99B]/25", "text-[#F8C99B]");
+          });
+
+          btn.classList.add("bg-[#F07819]", "text-[#050505]", "border-[#F07819]", "font-semibold");
+          btn.classList.remove("border-[#F8C99B]/25", "text-[#F8C99B]");
+
+          currentVisibleItems = [];
+          galleryItems.forEach(item => {
+            const cat = item.getAttribute("data-category");
+            if (filter === "all" || cat === filter) {
+              item.classList.remove("hidden");
+              currentVisibleItems.push(item);
+            } else {
+              item.classList.add("hidden");
+            }
+          });
+        });
+      });
+
+      const updateLightboxContent = (index) => {
+        if (!currentVisibleItems.length) return;
+        currentIndex = (index + currentVisibleItems.length) % currentVisibleItems.length;
+        const item = currentVisibleItems[currentIndex];
+        const img = item.querySelector("img");
+        const cat = item.querySelector("figcaption span")?.textContent || "";
+        const cap = item.querySelector("figcaption p")?.textContent || "";
+
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+        lightboxCat.textContent = cat;
+        lightboxCap.textContent = cap;
+      };
+
+      const openLightbox = (item) => {
+        const idx = currentVisibleItems.indexOf(item);
+        updateLightboxContent(idx >= 0 ? idx : 0);
+        lightbox.classList.add("active");
+        document.body.style.overflow = "hidden";
+      };
+
+      const closeLightbox = () => {
+        lightbox.classList.remove("active");
+        document.body.style.overflow = "";
+      };
+
+      galleryItems.forEach(item => {
+        item.addEventListener("click", () => openLightbox(item));
+      });
+
+      closeBtn.addEventListener("click", closeLightbox);
+      prevBtn.addEventListener("click", () => updateLightboxContent(currentIndex - 1));
+      nextBtn.addEventListener("click", () => updateLightboxContent(currentIndex + 1));
+
+      lightbox.addEventListener("click", (e) => {
+        if (e.target === lightbox) closeLightbox();
+      });
+
+      document.addEventListener("keydown", (e) => {
+        if (!lightbox.classList.contains("active")) return;
+        if (e.key === "Escape") closeLightbox();
+        if (e.key === "ArrowLeft") updateLightboxContent(currentIndex - 1);
+        if (e.key === "ArrowRight") updateLightboxContent(currentIndex + 1);
+      });
+    }
+
+    /**
+     * Appointment Request Validation, Backend-Ready Submission & WhatsApp Integration.
+     */
+    function initBookingSystem() {
+      const form = document.getElementById("booking-form");
+      const dateInput = document.getElementById("preferredDate");
+      const submitBtn = document.getElementById("booking-submit-btn");
+      const submitText = document.getElementById("submit-btn-text");
+      const submitSpinner = document.getElementById("submit-spinner");
+
+      const feedbackPanel = document.getElementById("booking-feedback");
+      const feedbackTitle = document.getElementById("feedback-title");
+      const feedbackDesc = document.getElementById("feedback-description");
+      const msgPreview = document.getElementById("whatsapp-message-preview");
+      const directWaLink = document.getElementById("direct-whatsapp-link");
+      const copyBtn = document.getElementById("copy-booking-btn");
+      const copyMsg = document.getElementById("copy-confirmation-msg");
+      const closeFeedbackBtn = document.getElementById("close-feedback-btn");
+
+      const todayStr = new Date().toISOString().split("T")[0];
+      if (dateInput) {
+        dateInput.setAttribute("min", todayStr);
+      }
+
+      const showError = (fieldId, message) => {
+        const input = document.getElementById(fieldId);
+        const errorEl = document.getElementById(`error-${fieldId}`);
+        if (input) input.classList.add("input-error");
+        if (errorEl) {
+          errorEl.textContent = message;
+          errorEl.classList.remove("hidden");
+        }
+      };
+
+      const clearErrors = () => {
+        form.querySelectorAll(".form-input").forEach(el => el.classList.remove("input-error"));
+        form.querySelectorAll("[id^='error-']").forEach(el => {
+          el.textContent = "";
+          el.classList.add("hidden");
+        });
+      };
+
+      const validateForm = (data) => {
+        clearErrors();
+        let isValid = true;
+
+        if (!data.fullName || data.fullName.trim().length < 3) {
+          showError("fullName", "Por favor, introduza o seu nome completo.");
+          isValid = false;
+        }
+
+        const cleanPhone = data.phone.replace(/[\s()-]/g, "");
+        if (!cleanPhone || !/^\+?\d{8,15}$/.test(cleanPhone)) {
+          showError("phone", "Introduza um número de telefone ou WhatsApp válido (ex: +258 84 000 0000).");
+          isValid = false;
+        }
+
+        if (data.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) {
+          showError("email", "Por favor, introduza um endereço de email válido.");
+          isValid = false;
+        }
+
+        if (!data.braidType) {
+          showError("braidType", "Seleccione o tipo de trança pretendido.");
+          isValid = false;
+        }
+
+        if (!data.length) {
+          showError("length", "Seleccione o comprimento pretendido.");
+          isValid = false;
+        }
+
+        if (!data.size) {
+          showError("size", "Seleccione o tamanho das tranças.");
+          isValid = false;
+        }
+
+        if (!data.preferredDate) {
+          showError("preferredDate", "Seleccione a data pretendida.");
+          isValid = false;
+        } else if (data.preferredDate < todayStr) {
+          showError("preferredDate", "Não é possível seleccionar uma data passada.");
+          isValid = false;
+        }
+
+        if (!data.preferredTime) {
+          showError("preferredTime", "Seleccione a hora preferida.");
+          isValid = false;
+        }
+
+        if (!data.neighborhood || data.neighborhood.trim().length < 2) {
+          showError("neighborhood", "Indique o bairro ou zona em Maputo.");
+          isValid = false;
+        }
+
+        if (!data.fullAddress || data.fullAddress.trim().length < 5) {
+          showError("fullAddress", "Indique o endereço completo para o atendimento móvel.");
+          isValid = false;
+        }
+
+        return isValid;
+      };
+
+      const formatWhatsAppMessage = (data) => {
+        const formattedDate = data.preferredDate.split("-").reverse().join("/");
+        return [
+          "*NOVO PEDIDO DE MARCAÇÃO — THE KNOTIES*",
+          "----------------------------------------",
+          `*Cliente:* ${data.fullName}`,
+          `*Telefone / WhatsApp:* ${data.phone}`,
+          data.email ? `*Email:* ${data.email}` : null,
+          "",
+          "*DETALHES DO PENTEADO*",
+          `*Estilo:* ${data.braidType}`,
+          `*Comprimento:* ${data.length}`,
+          `*Tamanho:* ${data.size}`,
+          "",
+          "*DATA E LOCALIZAÇÃO (SERVIÇO MÓVEL)*",
+          `*Data pretendida:* ${formattedDate}`,
+          `*Hora preferida:* ${data.preferredTime}`,
+          `*Bairro / Zona:* ${data.neighborhood}`,
+          `*Endereço:* ${data.fullAddress}`,
+          data.notes ? `\n*Observações:* ${data.notes}` : null,
+          "----------------------------------------",
+          "_Pedido sujeito a confirmação de disponibilidade e orçamento em MT._"
+        ].filter(Boolean).join("\n");
+      };
+
+      async function submitToOptionalBackend(payload) {
+        if (!BRAND_CONFIG.BACKEND_ENDPOINT) {
+          return { backendUsed: false };
+        }
+        const response = await fetch(BRAND_CONFIG.BACKEND_ENDPOINT, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload)
+        });
+        if (!response.ok) {
+          throw new Error("Falha ao comunicar com o servidor de marcações.");
+        }
+        return { backendUsed: true };
+      }
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        const formData = {
+          fullName: document.getElementById("fullName").value.trim(),
+          phone: document.getElementById("phone").value.trim(),
+          email: document.getElementById("email").value.trim(),
+          braidType: document.getElementById("braidType").value,
+          length: document.getElementById("length").value,
+          size: document.getElementById("size").value,
+          preferredDate: document.getElementById("preferredDate").value,
+          preferredTime: document.getElementById("preferredTime").value,
+          neighborhood: document.getElementById("neighborhood").value.trim(),
+          fullAddress: document.getElementById("fullAddress").value.trim(),
+          notes: document.getElementById("notes").value.trim()
+        };
+
+        if (!validateForm(formData)) {
+          const firstError = form.querySelector(".input-error");
+          if (firstError) firstError.focus();
+          return;
+        }
+
+        submitBtn.disabled = true;
+        submitText.textContent = "A PREPARAR PEDIDO...";
+        submitSpinner.classList.remove("hidden");
+
+        try {
+          await submitToOptionalBackend(formData);
+
+          const message = formatWhatsAppMessage(formData);
+          const encodedMessage = encodeURIComponent(message);
+          const isWaConfigured = BRAND_CONFIG.WHATSAPP_NUMBER && !BRAND_CONFIG.WHATSAPP_NUMBER.includes("INSERIR");
+          const cleanWaNumber = BRAND_CONFIG.WHATSAPP_NUMBER.replace(/\D/g, "");
+
+          const waUrl = isWaConfigured
+            ? `https://wa.me/${cleanWaNumber}?text=${encodedMessage}`
+            : `https://wa.me/?text=${encodedMessage}`;
+
+          msgPreview.textContent = message;
+          directWaLink.href = waUrl;
+          copyMsg.classList.add("hidden");
+
+          if (isWaConfigured) {
+            feedbackTitle.textContent = "Pedido de Marcação Preparado";
+            feedbackDesc.textContent = "O seu pedido foi encaminhado para o WhatsApp da THE KNOTIES. A nossa equipa entrará em contacto para confirmar a disponibilidade e o valor final em MT.";
+            window.open(waUrl, "_blank", "noopener,noreferrer");
+          } else {
+            feedbackTitle.textContent = "Resumo do Pedido Gerado";
+            feedbackDesc.textContent = "O número oficial da empresa ainda está em configuração (WHATSAPP_NUMBER). Pode abrir o WhatsApp para seleccionar o contacto ou copiar o resumo formatado abaixo.";
+          }
+
+          feedbackPanel.classList.remove("hidden");
+          feedbackPanel.scrollIntoView({ behavior: "smooth", block: "nearest" });
+        } catch (err) {
+          feedbackTitle.textContent = "Atenção ao Envio";
+          feedbackDesc.textContent = "Não foi possível contactar o servidor neste momento, mas o resumo do seu pedido está pronto abaixo para envio directo via WhatsApp.";
+          feedbackPanel.classList.remove("hidden");
+        } finally {
+          submitBtn.disabled = false;
+          submitText.textContent = "ENVIAR PEDIDO DE MARCAÇÃO";
+          submitSpinner.classList.add("hidden");
+        }
+      });
+
+      copyBtn.addEventListener("click", () => {
+        const textArea = document.createElement("textarea");
+        textArea.value = msgPreview.textContent;
+        textArea.style.position = "fixed";
+        textArea.style.opacity = "0";
+        document.body.appendChild(textArea);
+        textArea.select();
+        try {
+          document.execCommand("copy");
+          copyMsg.classList.remove("hidden");
+        } catch (err) {
+          copyMsg.textContent = "Seleccione o texto acima para copiar manualmente.";
+          copyMsg.classList.remove("hidden");
+        }
+        document.body.removeChild(textArea);
+      });
+
+      closeFeedbackBtn.addEventListener("click", () => {
+        feedbackPanel.classList.add("hidden");
+      });
+    }
+  </script>
+</body>
+</html>
